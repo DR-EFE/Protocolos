@@ -1,0 +1,23 @@
+import os
+
+def hide_folders(folder_paths):
+    try:
+        for folder_path in folder_paths:
+            # Construir la ruta completa del comando attrib
+            attrib_command = f'attrib +h "{folder_path}"'
+
+            # Ejecutar el comando attrib usando os.system
+            os.system(attrib_command)
+
+            print(f"Carpeta ocultada: {folder_path}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    folders_to_hide = [
+        r"F:\videos de la inteligencia artificial",
+        r"F:\otra carpeta a ocultar",
+        # Agrega más rutas de carpetas aquí
+    ]
+
+    hide_folders(folders_to_hide)
